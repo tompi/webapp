@@ -7,11 +7,20 @@ module.exports = {
   },
   sessionSecret: 'verytopsecret',
   passport: {
-    google: {
+    'google-oauth': {
+      strategy: 'OAuth2Strategy',
+      scope: [
+         'https://www.googleapis.com/auth/userinfo.profile',
+         'https://www.googleapis.com/auth/userinfo.email'
+      ],
       clientID: '1098607882040.apps.googleusercontent.com',
-      clientSecret: 'CISVtnCf9N5L7IZPBVddeK48',
-      emailAddress: '1098607882040@developer.gserviceaccount.com',
-      callbackURL: 'http://localhost:3000/oauth2callback'
+      clientSecret: 'CISVtnCf9N5L7IZPBVddeK48'
+    },
+    facebook: {
+      scope: ['email'],
+      clientID: '396026930541318',
+      clientSecret: 'c8c711ef1c55b53b5ac926893c954d85',
+      profileFields: ['id', 'name', 'emails', 'displayName', 'photos']
     }
   }
 };

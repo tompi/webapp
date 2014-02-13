@@ -36,9 +36,10 @@ app.configure('development', function(){
 var mongo = require('./mongo.js');
 var mers = require('mers');
 var mc = config.mongodb;
-app.use('/api/v1', mers({
-  uri: 'mongodb://' + mc.user + ':' + mc.password + '@' + mc.host + '/' + mc.db
-}).rest());
+var dbUri = process.env.MONGOHQ_URL;
+if (!dbUri) dbUri = 'mongodb://' + mc.user + ':' + mc.password + '@' + mc.host + '/' + mc.db;
+
+app.use('/api/v1', mers({ uri: dbUri }).rest());
 
 var userService = require('./userService')(app.locals.mers.conn);
 auth.init(app, config, passport, userService);
