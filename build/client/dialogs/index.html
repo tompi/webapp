@@ -1,0 +1,73 @@
+<div class="well">
+  <h1 class="page-header">Dialogues</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Popup alerts</h2>
+      <p>
+        <a href="http://codeseven.github.io/toastr/demo.html">
+          Full documentation for <i>Toastr</i> 
+        </a>
+      </p>
+      <a ng-click="success('Success')" class="btn btn-success">Success</a>
+      <a ng-click="info('Info')" class="btn btn-info">Info</a>
+      <a ng-click="warning('Warning')" class="btn btn-warning">Warning</a>
+      <a ng-click="error('Error')" class="btn btn-danger">Error</a>
+
+      <h2>Modal dialogues</h2>
+      <p>
+        <a href="http://angular-ui.github.io/bootstrap/#/modal">
+          Full documentation
+        </a>
+      </p>
+      Selected: {{selected}}
+      <a ng-click="open()" class="btn btn-default">Open modal to select</a>
+      <script type="text/ng-template" id="myModalContent">
+        <div class="modal-header">
+        <h3>Pick your preferred action hero</h3>
+        </div>
+        <div class="modal-body">
+        <ul class="nav nav-pills nav-stacked">
+        <li ng-repeat="item in items" ng-class="{active: item == selected.item}">
+        <a ng-click="selected.item = item">{{ item }}</a>
+        </li>
+        </ul>
+        </div>
+        <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+        </script>
+
+        <h2>Popovers</h2>
+        <p>
+          <a href="http://angular-ui.github.io/bootstrap/#/popover">
+            Full documentation
+          </a>
+        </p>
+        <div class="row">
+          <div class="col-xs-2">
+            <button popover="I appeared on mouse enter!" popover-trigger="mouseenter" class="btn btn-default">Mouseenter</button>
+          </div>
+          <div class="col-xs-3">
+            <input type="text" value="Click me!" popover="I appeared on focus! Click away and I'll vanish..."  
+            popover-trigger="focus" class="form-control">
+          </div>
+        </div>
+
+        <h2>Alerts</h2>
+        <div class="alert alert-success">
+          <strong>Well done!</strong> You successfully read this important alert message.
+        </div>
+        <div class="alert alert-info">
+          <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+        </div>
+        <div class="alert alert-warning">
+          <strong>Warning!</strong> Better check yourself, you're not looking too good.
+        </div>
+        <div class="alert alert-danger">
+          <strong>Oh snap!</strong> Change a few things up and try submitting again.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

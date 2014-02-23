@@ -17,12 +17,13 @@
     "angular": "~1.2.7",
     "angular-route": "~1.2.7",
     "jquery": "~2.0.3",
-    "angular-strap": "~0.7.8",
     "restangular": "~1.2.2",
     "font-awesome": "~4.0.3",
-    "lodash": "~2.4.1"
-  },
-  "resolutions": {
-    "bootstrap": ">=3.0 <4.0"
+    "lodash": "~2.4.1",
+    "angular-bootstrap": "~0.10.0",
+    "datatables": "~1.9.4",
+    "datatables-bootstrap3": "*",
+    "datatables-tabletools": "~2.2.0",
+    "toastr": "~2.0.1"
   }
 }

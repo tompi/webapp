@@ -1,0 +1,21 @@
+<div class="well">
+  <h1 class="page-header">Tables</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>JSONP backed client side paging</h2>
+      <table datatables="overrideOptions"
+        aa-data="sampleProductCategories"
+        ao-column-defs="columnDefs"
+        fn-row-callback="myCallback"
+        class="datatable table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th style="width:150px">Category</th>
+            <th style="width:250px">Name</th>
+            <th style="width:100px">Price</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>

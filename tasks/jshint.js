@@ -4,6 +4,7 @@ module.exports = {
     'client/**/*.js', 
     'server/**/*.js', 
     'tasks/**/*.js', 
-    '!**/*.min.js'
+    '!**/*.min.js',
+    '!**/lib/*.js'
   ]
 };
