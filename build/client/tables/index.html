@@ -2,7 +2,7 @@
   <h1 class="page-header">Tables</h1>
   <div class="row">
     <div class="col-md-12">
-      <h2>JSONP backed client side paging</h2>
+      <h2>Static JSON</h2>
       <table datatables="overrideOptions"
         aa-data="sampleProductCategories"
         ao-column-defs="columnDefs"
@@ -10,9 +10,23 @@
         class="datatable table table-striped table-bordered">
         <thead>
           <tr>
-            <th style="width:150px">Category</th>
-            <th style="width:250px">Name</th>
-            <th style="width:100px">Price</th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+      </table>
+      <h2>REST-backed client side paging
+        <small>changes in the "Mongodb" tab should be refelcted here</small>
+      </h2>
+      <table datatables="overrideOptions"
+        aa-data="todos"
+        ao-column-defs="todoColumnDefs"
+        class="datatable table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Text</th>
+            <th>Done</th>
           </tr>
         </thead>
       </table>

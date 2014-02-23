@@ -6,8 +6,8 @@ webapp.directive(
   return function(scope, element, attrs) {
     // apply DataTable options, use defaults if none specified by user
     var options = {
-        "bStateSave": true,
-        "iCookieDuration": 2419200, /* 1 month */
+        "bStateSave": false,
+        //"iCookieDuration": 2419200, /* 1 month */
         "bJQueryUI": false,
         "bPaginate": true,
         "bLengthChange": true,
