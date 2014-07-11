@@ -11,9 +11,10 @@ webapp.controller(
         $scope.todos = todos;
       });
       $scope.todoColumnDefs = [ 
-        { "mDataProp": "text", "aTargets":[0]},
-        { "mDataProp": "done", "aTargets":[1] }
+        { "data": "text"},
+        { "data": "done" }
       ]; 
+      $scope.sorting = [[2, 'desc']];
 
       $scope.message = '';
 
@@ -29,15 +30,11 @@ webapp.controller(
       $scope.someClickHandler = function(info) {
         $scope.message = 'clicked: '+ info.price;
       };
-
       $scope.columnDefs = [ 
-        { "mDataProp": "category", "aTargets":[0]},
-        { "mDataProp": "name", "aTargets":[1] },
-        { "mDataProp": "price", "aTargets":[2] }
+        { "data": "category"},
+        { "data": "name" },
+        { "data": "price" }
       ]; 
-
-      $scope.overrideOptions = {
-      };
 
       $scope.sampleProductCategories = carsProvider.cars;
     }

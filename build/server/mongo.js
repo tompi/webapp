@@ -14,7 +14,8 @@ var UserSchema = new Schema({
 
 var TodoSchema = new Schema({
   text:String,
-  done:Boolean
+  done:Boolean,
+  created: { type: Date, default: Date.now }
 });
 
 var User = module.exports.User = mongoose.model('User', UserSchema);

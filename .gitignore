@@ -5,3 +5,4 @@ client/assets/fonts/
 .tmp/
 *npm-debug.log
 TODO
+*.swp

@@ -2,6 +2,8 @@ Webapp
 ======
 
 Live demo at http://webapp-template.herokuapp.com
+(NB: SSO with google/facebook only works on localhost with
+dev-setup)
 
 Template project for webapps on node.js using bootstrap and angular.
 

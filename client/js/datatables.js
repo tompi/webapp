@@ -16,30 +16,18 @@ webapp.directive(
         "bDestroy": true,
         "sPaginationType": "bs_normal"
     };
-    if (attrs.datatables.length > 0) {
+    if (attrs.datatables && attrs.datatables.length > 0) {
       options =  $.extend(options,scope.$eval(attrs.datatables));
     }
-
-    // Tell the dataTables plugin what columns to use
-    //We can either derive them from the dom, or use setup from the controller           
-    var explicitColumns = [];
-    element.find('th').each(function(index, elem) {
-      explicitColumns.push($(elem).text());
-    });
-    if (explicitColumns.length > 0) {
-      options.aoColumns = explicitColumns;
-    } else if (attrs.aoColumns) {
-      options.aoColumns = scope.$eval(attrs.aoColumns);
+    if (attrs.columns) {
+      options.columns = scope.$eval(attrs.columns);
     }
-
-    if (attrs.aoColumnDefs) {
-      options.aoColumnDefs = scope.$eval(attrs.aoColumnDefs);
+    if (attrs.sorting) {
+      options.aaSorting = scope.$eval(attrs.sorting);
     }
-
     if (attrs.fnRowCallback) {
       options.fnRowCallback = scope.$eval(attrs.fnRowCallback);
     }
-
     //apply the plugin
     var dataTable = element.dataTable(options);
 
@@ -56,13 +44,13 @@ webapp.directive(
     });
 
     //watch for any changes to our data, rebuild the DataTable
-    scope.$watch(attrs.aaData, function(value) {
+    scope.$watch(attrs.data, function(value) {
       var val = value || null;
       if (val) {
         dataTable.fnClearTable();
-        dataTable.fnAddData(scope.$eval(attrs.aaData));
+        dataTable.fnAddData(scope.$eval(attrs.data));
       }
-    });
+    }, true);
   };
 });
 
