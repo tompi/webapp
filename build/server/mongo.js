@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ObjectId = mongoose.Schema.ObjectId;
+var EventEmitter = require('events').EventEmitter;
 
 // Passports unified user schema
 var UserSchema = new Schema({
@@ -18,5 +19,13 @@ var TodoSchema = new Schema({
   created: { type: Date, default: Date.now }
 });
 
-var User = module.exports.User = mongoose.model('User', UserSchema);
-var Todo = module.exports.Todo = mongoose.model('Todo', TodoSchema);
+var me = new EventEmitter();
+
+me.User = mongoose.model('User', UserSchema);
+me.Todo = mongoose.model('Todo', TodoSchema);
+
+TodoSchema.post('save', function (doc) {
+    me.emit('newTodo', doc);
+});
+
+module.exports = me;

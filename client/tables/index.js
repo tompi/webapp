@@ -4,7 +4,8 @@ webapp.controller(
     '$scope',
     'carsProvider',
     'Restangular',
-    function TableCtrl($scope, carsProvider, Restangular) {
+    'socket',
+    function TableCtrl($scope, carsProvider, Restangular, socket) {
       var todoApi = Restangular.all('api/v1/Todo');
 
       todoApi.getList().then(function(todos) {
@@ -37,6 +38,10 @@ webapp.controller(
       ]; 
 
       $scope.sampleProductCategories = carsProvider.cars;
+        
+        socket.on('newTodo', function(todo) {
+            $scope.todos.push(todo);
+        });
     }
   ]
 );

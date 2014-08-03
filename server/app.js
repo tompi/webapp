@@ -45,6 +45,13 @@ app.use('/api/v1', mers({ uri: dbUri }).rest());
 var userService = require('./userService')(app.locals.mers.conn);
 auth.init(app, config, passport, userService);
 
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app);
+server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
+});
+
+var io = require('socket.io').listen(server);
+
+mongo.on('newTodo', function(todo) {
+    io.sockets.emit('newTodo', todo);
 });
