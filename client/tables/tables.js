@@ -8,12 +8,19 @@ webapp.controller(
     function TableCtrl($scope, carsProvider, Restangular, socket) {
       var todoApi = Restangular.all('api/v1/Todo');
 
+      var formatTodo = function(todo) {
+        var m = moment(todo.created);
+        todo.createdTextual = m.fromNow();
+      };
+
       todoApi.getList().then(function(todos) {
+        _.each(todos, formatTodo);
         $scope.todos = todos;
       });
       $scope.todoColumnDefs = [ 
         { "data": "text"},
-        { "data": "done" }
+        { "data": "done" },
+        { "data": "createdTextual" }
       ]; 
       $scope.sorting = [[2, 'desc']];
 
@@ -38,10 +45,9 @@ webapp.controller(
       ]; 
 
       $scope.sampleProductCategories = carsProvider.cars;
-        
-        socket.on('newTodo', function(todo) {
-            $scope.todos.push(todo);
-        });
+      socket.on('newTodo', function(todo) {
+        $scope.todos.push(todo);
+      });
     }
   ]
 );
