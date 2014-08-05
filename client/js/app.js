@@ -6,37 +6,37 @@ webapp.config(
       $routeProvider.
         when('/',
              {
-               templateUrl: 'home/index.html',
+               templateUrl: 'home/home.html',
                controller: 'HomeCtrl'
              }).
         when('/forms',
              {
-                templateUrl: 'forms/index.html',
+                templateUrl: 'forms/forms.html',
                 controller: 'FormsCtrl'
              }).
         when('/dialogs',
              {
-                templateUrl: 'dialogs/index.html',
+                templateUrl: 'dialogs/dialogs.html',
                 controller: 'DialogsCtrl'
              }).
         when('/tables',
              {
-                templateUrl: 'tables/index.html',
+                templateUrl: 'tables/tables.html',
                 controller: 'TablesCtrl'
              }).
         when('/mongodb',
              {
-                templateUrl: 'mongodb/index.html',
+                templateUrl: 'mongodb/mongodb.html',
                 controller: 'MongodbCtrl'
              }).
         when('/passport',
              {
-                templateUrl: 'passport/index.html',
+                templateUrl: 'passport/passport.html',
                 controller: 'PassportCtrl'
              }).
         when('/about',
              {
-                templateUrl: 'about/index.html',
+                templateUrl: 'about/about.html',
                 //controller: 'AboutCtrl'
              }).
         otherwise(
@@ -51,36 +51,3 @@ webapp.config(
       });
     }
 ]);
-
-// Nicking the bsNavbar directive from angular strap
-// (only 1 needed not in angular.ui)
-webapp.directive('bsNavbar', 
-  ['$location',
-  function($location) {
-  'use strict';
-
-  return {
-    restrict: 'A',
-    link: function postLink(scope, element, attrs, controller) {
-      // Watch for the $location
-      scope.$watch(function() {
-        return $location.path();
-      }, function(newValue, oldValue) {
-
-        $('li[data-match-route]', element).each(function(k, li) {
-          var $li = angular.element(li),
-          // data('match-rout') does not work with dynamic attributes
-          pattern = $li.attr('data-match-route'),
-          regexp = new RegExp('^' + pattern + '$', ['i']);
-
-          if(regexp.test(newValue)) {
-            $li.addClass('active');
-          } else {
-            $li.removeClass('active');
-          }
-
-        });
-      });
-    }
-  };
-}]);
