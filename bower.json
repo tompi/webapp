@@ -24,6 +24,10 @@
     "datatables": "~1.10.0",
     "datatables-bootstrap3": "*",
     "datatables-tabletools": "~2.2.0",
-    "toastr": "~2.0.1"
+    "toastr": "~2.0.1",
+    "moment": "~2.8.1"
+  },
+  "resolutions": {
+    "datatables": "~1.10.0"
   }
 }

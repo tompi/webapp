@@ -4,5 +4,4 @@ client/js/lib/
 client/assets/fonts/
 .tmp/
 *npm-debug.log
-TODO
 *.swp

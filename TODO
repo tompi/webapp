@@ -1,0 +1,19 @@
+remove mers(buggy) and use mongoose + explicit routes
+checkbox - ng-model
+select2 - jsonp backed
+validation errors
+i118n
+error-logging: client+serverside
+browserify/gulp?
+numeric directive
+min/max values
+postal code lookup
+City autocomplete
+server side paged table
+Search-gui
+Tabs
+File upload
+datatables date+sorting+socket.io update
+togglebuttons
+csv-export
+moment.js: relative dates
