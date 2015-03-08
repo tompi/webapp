@@ -15,5 +15,6 @@ module.exports = function(grunt) {
   });
 
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'jshint', 'nodeunit', 'less', 'copy', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'usemin']);
+  grunt.registerTask('test', ['jshint', 'nodeunit']);
+  grunt.registerTask('default', ['clean', 'test', 'less', 'copy', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'usemin']);
 };
