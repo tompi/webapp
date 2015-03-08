@@ -17,16 +17,26 @@ webapp.controller(
 
       $scope.selectedInterests = {};
 
-       $scope.open = function($event) {
+      $scope.open = function($event) {
              $event.preventDefault();
              $event.stopPropagation();
 
              $scope.opened = true;
-       };
-       $scope.format = 'yyyy-MM-dd';
+      };
+      $scope.format = 'yyyy-MM-dd';
 
-       // For debugging only:
-       window.data = $scope;
+      $http.get('/api/backgrounds').success(function(data) {
+        $scope.backgrounds = data;
+      });
+
+      // For debugging only:
+      window.data = $scope;
+
+      $scope.$watch('selectedBackground', function(newValue) {
+        if (newValue) {
+          $('html').css('background-image', 'url(/assets/img/backgrounds/' + newValue + ')');
+        }
+      });
     }
   ]
 );

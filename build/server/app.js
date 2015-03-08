@@ -55,3 +55,7 @@ var io = require('socket.io').listen(server);
 mongo.on('newTodo', function(todo) {
     io.sockets.emit('newTodo', todo);
 });
+
+var backgrounds = require('./backgrounds');
+backgrounds.init(app);
+
