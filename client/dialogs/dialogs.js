@@ -1,4 +1,4 @@
-webapp.controller(
+angular.module('webapp').controller(
   'ModalInstanceCtrl',
   [
     '$scope',
@@ -21,7 +21,7 @@ webapp.controller(
     }]
 );
 
-webapp.controller(
+angular.module('webapp').controller(
   'DialogsCtrl',
   [
     '$scope',

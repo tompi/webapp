@@ -1,4 +1,4 @@
-webapp.factory('socket', ['$rootScope',
+angular.module('webapp').factory('socket', ['$rootScope',
 function($rootScope, $routeParams) {
     var socket = window.io.connect();
     var me = {};

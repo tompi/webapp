@@ -1,4 +1,4 @@
-webapp.factory(
+angular.module('webapp').factory(
   'carsProvider',
   [
     function carsProvider() {

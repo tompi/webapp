@@ -1,6 +1,6 @@
-var webapp = angular.module('webapp', ['ngRoute', 'restangular', 'ui.bootstrap']);
-
-webapp.config(
+angular
+  .module('webapp', ['ngRoute', 'restangular', 'ui.bootstrap'])
+  .config(
   ['$routeProvider', 'RestangularProvider',
     function($routeProvider, RestangularProvider) {
       $routeProvider.

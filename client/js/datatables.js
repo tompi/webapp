@@ -1,7 +1,7 @@
 // Nicked from:
 // http://jsfiddle.net/zdam/7kLFU/
 // Added som BS styling of search field
-webapp.directive(
+angular.module('webapp').directive(
   'datatables', function() {
   return function(scope, element, attrs) {
     // apply DataTable options, use defaults if none specified by user

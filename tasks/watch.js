@@ -7,8 +7,8 @@ module.exports = {
     tasks: []
   },
   js: {
-    files: ['client/**/*.js', '!**/*.min.js'],
-    tasks: []
+    files: ['client/**/*.js', '!**/*.min.js', '!client/js/bundle.js'],
+    tasks: ['browserify']
   },
   less: {
     files: ['client/**/*.less'],

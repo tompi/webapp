@@ -1,6 +1,6 @@
 // Nicking the bsNavbar directive from angular strap
 // (only 1 needed not in angular.ui)
-webapp.directive('bsNavbar', 
+angular.module('webapp').directive('bsNavbar', 
   ['$location',
   function($location) {
   'use strict';

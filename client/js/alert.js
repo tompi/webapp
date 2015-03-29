@@ -1,4 +1,4 @@
-webapp.factory(
+angular.module('webapp').factory(
   'alertService', 
   [
     function() {

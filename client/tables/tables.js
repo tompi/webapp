@@ -1,4 +1,4 @@
-webapp.controller(
+angular.module('webapp').controller(
   'TablesCtrl',
   [
     '$scope',
