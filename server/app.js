@@ -14,7 +14,7 @@ var app = express();
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
-  app.set('views', __dirname + '../client');
+  app.set('views', __dirname + '../build/client');
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.json());
@@ -26,7 +26,7 @@ app.configure(function(){
   app.use(passport.session());
   app.use(express.compress());
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, '../client')));
+  app.use(express.static(path.join(__dirname, '../build/client')));
 });
 
 app.configure('development', function(){
